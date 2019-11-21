@@ -7,8 +7,8 @@ plugins {
 }
 
 group = 'ch.noseryoung'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '13'
+version = '1'
+sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
@@ -25,3 +25,14 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+docker{
+	name 'noelmonnerat/google'
+	tags 'latest'
+	dockerfile file('Dockerfile')
+	files war.archiveFile
+	pull true
+	noCache true
+}
+
+docker.dependsOn bootWar
