@@ -3,6 +3,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
 	id 'war'
+	id "org.sonarqube" version "2.8"
 	id 'com.palantir.docker' version"0.22.1"
 }
 
@@ -19,6 +20,11 @@ dependencies {
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+sonarqube {
+	properties {
+		property "sonar.projectKey", "noelmonnerat_gradlew"
 	}
 }
 
