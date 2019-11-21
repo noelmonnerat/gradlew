@@ -24,7 +24,7 @@ dependencies {
 }
 sonarqube {
 	properties {
-		property "sonar.projectKey", "noelmonnerat_gradlew"
+		property "sonar.projectKey", "noelmonnerat_gradlew2"
 	}
 }
 
